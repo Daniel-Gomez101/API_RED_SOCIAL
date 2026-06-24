@@ -6,6 +6,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { RolesModule } from './modules/roles/roles.module';
 import { UsuariosModule } from './modules/usuarios/usuarios.module';
 import { PublicacionesModule } from './modules/publicaciones/publicaciones.module';
+import { ComentariosService } from './modules/comentarios/comentarios.service';
+import { ComentariosController } from './modules/comentarios/comentarios.controller';
+import { ComentariosModule } from './modules/comentarios/comentarios.module';
 
 @Module({
   imports: [
@@ -16,8 +19,9 @@ import { PublicacionesModule } from './modules/publicaciones/publicaciones.modul
     RolesModule,
     UsuariosModule,
     PublicacionesModule,
+    ComentariosModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, ComentariosController],
+  providers: [AppService, ComentariosService],
 })
 export class AppModule {}
