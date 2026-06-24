@@ -10,6 +10,8 @@ import { ComentariosModule } from './modules/comentarios/comentarios.module';
 import { ReaccionesService } from './modules/reacciones/reacciones.service';
 import { ReaccionesController } from './modules/reacciones/reacciones.controller';
 import { ReaccionesModule } from './modules/reacciones/reacciones.module';
+import { SeguidoresService } from './modules/seguidores/seguidores.service';
+import { SeguidoresModule } from './modules/seguidores/seguidores.module';
 
 @Module({
     imports: [
@@ -20,8 +22,9 @@ import { ReaccionesModule } from './modules/reacciones/reacciones.module';
         PublicacionesModule,
         ComentariosModule,
         ReaccionesModule,
+        SeguidoresModule,
     ],
     controllers: [AppController, ReaccionesController],
-    providers: [AppService, ReaccionesService],
+    providers: [AppService, ReaccionesService, SeguidoresService],
 })
 export class AppModule {}
