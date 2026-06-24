@@ -7,6 +7,9 @@ import { RolesModule } from './modules/roles/roles.module';
 import { UsuariosModule } from './modules/usuarios/usuarios.module';
 import { PublicacionesModule } from './modules/publicaciones/publicaciones.module';
 import { ComentariosModule } from './modules/comentarios/comentarios.module';
+import { ReaccionesService } from './modules/reacciones/reacciones.service';
+import { ReaccionesController } from './modules/reacciones/reacciones.controller';
+import { ReaccionesModule } from './modules/reacciones/reacciones.module';
 
 @Module({
     imports: [
@@ -16,8 +19,9 @@ import { ComentariosModule } from './modules/comentarios/comentarios.module';
         UsuariosModule,
         PublicacionesModule,
         ComentariosModule,
+        ReaccionesModule,
     ],
-    controllers: [AppController],
-    providers: [AppService],
+    controllers: [AppController, ReaccionesController],
+    providers: [AppService, ReaccionesService],
 })
 export class AppModule {}
