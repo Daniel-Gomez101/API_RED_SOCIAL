@@ -5,6 +5,7 @@ export type ReaccionDocument = Reaccion & Document;
 
 @Schema({
     timestamps: true,
+    collection: 'reacciones',
 })
 export class Reaccion {
 

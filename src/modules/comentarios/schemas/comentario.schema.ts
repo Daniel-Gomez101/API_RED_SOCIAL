@@ -3,7 +3,10 @@ import { Document, Types } from 'mongoose';
 
 export type ComentarioDocument = Comentario & Document;
 
-@Schema({ timestamps: true })
+@Schema({ 
+    timestamps: true, 
+    collection: 'comentarios',
+})
 export class Comentario {
     @Prop({ required: true })
     contenido!: string;

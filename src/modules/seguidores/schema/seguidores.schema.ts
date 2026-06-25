@@ -5,6 +5,7 @@ export type SeguidorDocument = Seguidor & Document;
 
 @Schema({
     timestamps: true,
+    collection: 'seguidores',
 })
 export class Seguidor {
 
