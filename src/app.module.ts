@@ -5,15 +5,21 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { RolesModule } from './modules/roles/roles.module';
 import { UsuariosModule } from './modules/usuarios/usuarios.module';
+import { PublicacionesModule } from './modules/publicaciones/publicaciones.module';
+import { ComentariosModule } from './modules/comentarios/comentarios.module';
+import { ReaccionesModule } from './modules/reacciones/reacciones.module';
+import { SeguidoresModule } from './modules/seguidores/seguidores.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
+    ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGODB_URI as string),
     RolesModule,
     UsuariosModule,
+    PublicacionesModule,
+    ComentariosModule,
+    ReaccionesModule,
+    SeguidoresModule,
   ],
   controllers: [AppController],
   providers: [AppService],
